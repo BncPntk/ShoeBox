@@ -32,4 +32,9 @@ function App() {
   );
 }
 
+export function getPageTitle(pageTitle) {
+  const baseTitle = 'ShoeBox';
+  return `${pageTitle ? `${pageTitle} - ` : ''}${baseTitle}`;
+}
+
 export default App;

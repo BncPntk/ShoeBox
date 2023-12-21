@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8fafc;
+}
+
+.shadow-custom {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@layer base {
+  li {
+    @apply md:px-2.5 lg:px-6 py-[6px] font-medium text-zinc-900 hover:text-customBrown hover:underline underline-offset-8 active:text-customDarkBrown flex items-center;
+  }
+}
