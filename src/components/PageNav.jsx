@@ -26,7 +26,7 @@ function PageNav() {
   }, []);
 
   return (
-    <nav className='w-screen h-[60px] z-10 bg-gray-100 fixed'>
+    <nav className='w-screen h-[60px] z-20 bg-gray-100 fixed top-0 left-0 block'>
       <div className='max-w-[1152px] px-4 flex justify-between items-center h-full mx-auto'>
         <Logo />
 
@@ -62,7 +62,7 @@ function PageNav() {
             <NavLink to='/login'>Login</NavLink>
           </li>
         </ul>
-        <div className='md:hidden cursor-pointer' onClick={handleClick}>
+        <div className='cursor-pointer md:hidden' onClick={handleClick}>
           {!navMobile ? (
             <List className='flex md:hidden text-customPurple hover:text-customDarkPurple' size={42} />
           ) : (
