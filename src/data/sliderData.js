@@ -1,7 +1,9 @@
+import carouselOne from './public/slider/carousel-1.jpg';
+
 const sliderData = [
     {
         id: 1,
-        path: '/public/slider/carousel-1.jpg',
+        path: carouselOne,
         title: 'Air Jordan 1 Retro High OG',
         text: 'The Travis Scott x Air Jordan 1 High OG is the limited edition collaboration from the rap superstar and Jordan Brand on the iconic silhouette that features a major twist.',
     },
