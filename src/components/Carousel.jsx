@@ -31,10 +31,13 @@ function Carousel() {
   return (
     <section className=''>
       <div className='flex max-w-[1152px] h-[550px] w-full px-4 relative mx-auto mt-28'>
-        <div
-          style={{ backgroundImage: `url(${slides[currIndex].path})` }}
-          className='w-full h-full duration-700 bg-center bg-cover'
-        >
+        <div className='w-full h-full duration-700'>
+          <img
+            src={`${slides[currIndex].path}`}
+            alt={`${slides[currIndex].title} slide`}
+            loading='eager'
+            className='object-cover w-full h-full'
+          />
           <div
             className='absolute top-[50%] -translate-x-0 translate-y-[-50%] left-4 bg-zinc-900 p-2 cursor-pointer z-10'
             onClick={prevSlide}
