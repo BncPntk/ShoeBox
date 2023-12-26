@@ -23,7 +23,7 @@ function Carousel() {
   useEffect(() => {
     const intervalId = setInterval(() => {
       nextSlide();
-    }, 2500);
+    }, 4500);
 
     return () => clearInterval(intervalId);
   }, [currIndex]);
@@ -31,9 +31,9 @@ function Carousel() {
   return (
     <section className=''>
       <div className='flex max-w-[1152px] h-[550px] w-full px-4 relative mx-auto mt-28'>
-        <div className='w-full h-full duration-700'>
+        <div className='w-full h-full'>
           <img
-            src={`${slides[currIndex].path}`}
+            src={slides[currIndex].path}
             alt={`${slides[currIndex].title} slide`}
             loading='eager'
             className='object-cover w-full h-full'
@@ -51,7 +51,7 @@ function Carousel() {
             <ArrowIcon size={18} />
           </div>
 
-          <div className='absolute left-0 right-0 z-10 flex items-center justify-center bottom-20'>
+          <div className='absolute left-0 right-0 z-10 flex items-center justify-center bottom-5'>
             {slides.map((slide, i) => (
               <div key={i} className='px-1.5 cursor-pointer' onClick={() => setCurrIndex(i)}>
                 <CircleFill
@@ -68,15 +68,17 @@ function Carousel() {
               key={i}
               className={`pb-4 px-10 md:px-4 lg:px-0 absolute w-full h-full md:w-[800px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ${
                 i === currIndex
-                  ? 'opacity-100 transition-opacity duration-1200 ease-in-out'
-                  : 'opacity-0 transition-opacity duration-1200 ease-in-out'
+                  ? 'opacity-100 transition-opacity duration-300 ease-in'
+                  : 'opacity-0 transition-opacity duration-300 ease-in'
               } flex flex-col items-center lg:items-start justify-center`}
               style={{ zIndex: i === currIndex ? 1 : 0 }}
             >
               <h1 className='mb-12 text-4xl font-bold text-center text-white md:text-5xl lg:text-6xl lg:text-left'>
                 {slide.title}
               </h1>
-              <p className='mb-6 text-white max-w-[302px] text-center md:text-left'>{slide.text}</p>
+              <p className='mb-6 text-white max-w-64 md:max-w-[302px] text-center md:text-left'>
+                {slide.text}
+              </p>
               <Button rounded={false} className='z-10'>
                 Discover
               </Button>
