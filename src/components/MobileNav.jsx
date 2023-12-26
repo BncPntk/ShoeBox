@@ -7,7 +7,7 @@ function MobileNav({ navMobile }) {
   return (
     <ul
       className={
-        !navMobile ? 'hidden' : 'absolute bg-gray-100 w-full h-screen px-4 py-16 text-2xl overflow-auto'
+        !navMobile ? 'hidden' : 'absolute bg-gray-100 w-full h-screen px-4 pt-16 pb-28 text-2xl overflow-auto'
       }
     >
       <li className='py-8'>
@@ -27,7 +27,7 @@ function MobileNav({ navMobile }) {
           <Button>On Sale</Button>
         </NavLink>
       </li>
-      <div className='flex my-16 justify-around'>
+      <div className='flex justify-around my-16'>
         <li>
           <NavLink to='/liked'>
             <LikeButton />
