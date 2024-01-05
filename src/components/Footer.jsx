@@ -49,7 +49,7 @@ function Footer() {
             <Logo variant={'white'} sizeClass={'size-8'} />
             <p>© 2024 ShoeBox, Inc. All Rights Reserved</p>
           </div>
-          <div className='flex items-end lg:justify-self-end gap-[24px] justify-self-center mt-8 lg:mt-0 text-xs sm:text-sm'>
+          <div className='flex items-end lg:justify-self-end gap-[14px] md:gap-[24px] justify-self-center my-8 lg:my-0 text-xs sm:text-sm'>
             {['Guides', 'Terms of Sale', 'Terms of Use', 'Privacy Policy'].map((text, index) => (
               <p key={index} className='hover:cursor-pointer hover:text-zinc-500'>
                 {text}
