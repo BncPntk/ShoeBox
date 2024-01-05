@@ -30,7 +30,7 @@ function Carousel() {
 
   return (
     <section className=''>
-      <div className='flex max-w-[1152px] h-[550px] w-full px-4 relative mx-auto mt-28'>
+      <div className='flex max-w-[1152px] h-[550px] w-full px-4 relative mx-auto mt-28 mb-[96px]'>
         <div className='w-full h-full'>
           <img
             src={slides[currIndex].path}

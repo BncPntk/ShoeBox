@@ -2,6 +2,7 @@ import PageNav from '../components/PageNav';
 import { getPageTitle } from '../App';
 import { Helmet } from 'react-helmet';
 import Carousel from '../components/Carousel';
+import Footer from '../components/Footer';
 
 function Home() {
   return (
@@ -11,6 +12,7 @@ function Home() {
       </Helmet>
       <PageNav />
       <Carousel />
+      <Footer />
     </div>
   );
 }
