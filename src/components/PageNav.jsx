@@ -32,16 +32,36 @@ function PageNav() {
 
         <ul className='hidden md:flex'>
           <li>
-            <NavLink to='/latest'>New & Featured</NavLink>
+            <NavLink
+              to='/latest'
+              className='hover:text-customBrown hover:underline underline-offset-8 active:text-customDarkBrown '
+            >
+              New & Featured
+            </NavLink>
           </li>
           <li>
-            <NavLink to='/men'>Men</NavLink>
+            <NavLink
+              to='/men'
+              className='hover:text-customBrown hover:underline underline-offset-8 active:text-customDarkBrown '
+            >
+              Men
+            </NavLink>
           </li>
           <li>
-            <NavLink to='/women'>Women</NavLink>
+            <NavLink
+              to='/women'
+              className='hover:text-customBrown hover:underline underline-offset-8 active:text-customDarkBrown '
+            >
+              Women
+            </NavLink>
           </li>
           <li>
-            <NavLink to='/kids'>Kids</NavLink>
+            <NavLink
+              to='/kids'
+              className='hover:text-customBrown hover:underline underline-offset-8 active:text-customDarkBrown '
+            >
+              Kids
+            </NavLink>
           </li>
           <li>
             <NavLink to='/sale'>

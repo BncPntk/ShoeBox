@@ -14,6 +14,6 @@ body {
 
 @layer base {
   li {
-    @apply md:px-2.5 lg:px-6 py-[6px] font-medium text-zinc-900 hover:text-customBrown hover:underline underline-offset-8 active:text-customDarkBrown flex items-center;
+    @apply md:px-2.5 lg:px-6 py-[6px] font-medium text-zinc-900 flex items-center;
   }
 }
