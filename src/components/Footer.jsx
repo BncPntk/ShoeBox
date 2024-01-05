@@ -46,7 +46,7 @@ function Footer() {
         </div>
         <div className='grid text-xs sm:text-sm lg:grid-cols-2 text-zinc-700 mt-[52px]'>
           <div className='flex items-end gap-[24px] mx-auto lg:mx-0'>
-            <Logo variant={'white'} size={8} />
+            <Logo variant={'white'} sizeClass={'size-8'} />
             <p>© 2024 ShoeBox, Inc. All Rights Reserved</p>
           </div>
           <div className='flex items-end lg:justify-self-end gap-[24px] justify-self-center mt-8 lg:mt-0 text-xs sm:text-sm'>

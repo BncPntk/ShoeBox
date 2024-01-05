@@ -28,7 +28,7 @@ function PageNav() {
   return (
     <nav className='w-full h-[60px] z-20 bg-gray-100 fixed top-0 left-0 block'>
       <div className='max-w-[1152px] px-4 flex justify-between items-center h-full mx-auto'>
-        <Logo size={12} />
+        <Logo sizeClass={'size-11'} />
 
         <ul className='hidden md:flex'>
           <li>
