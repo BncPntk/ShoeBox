@@ -3,6 +3,7 @@ import { getPageTitle } from '../App';
 import { Helmet } from 'react-helmet';
 import Carousel from '../components/Carousel';
 import Footer from '../components/Footer';
+import FAQ from '../components/FAQ';
 
 function Home() {
   return (
@@ -12,6 +13,7 @@ function Home() {
       </Helmet>
       <PageNav />
       <Carousel />
+      <FAQ />
       <Footer />
     </div>
   );
