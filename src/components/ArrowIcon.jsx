@@ -8,7 +8,7 @@ function ArrowIcon({ rotation = 0, color = 'black', backgroundColor = 'transpare
   return (
     <div style={{ width: size, height: size }}>
       <svg width='100%' height='100%' xmlns='http://www.w3.org/2000/svg' style={styles}>
-        <image xlinkHref='/arrow_icon.svg' height='100%' width='100%' />
+        <image xlinkHref='/icons/arrow_icon.svg' height='100%' width='100%' />
       </svg>
     </div>
   );

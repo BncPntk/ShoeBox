@@ -7,7 +7,9 @@ function MobileNav({ navMobile }) {
   return (
     <ul
       className={
-        !navMobile ? 'hidden' : 'absolute bg-gray-100 w-full h-screen px-4 pt-16 pb-28 text-2xl overflow-auto'
+        !navMobile
+          ? 'hidden'
+          : 'absolute bg-gray-100 w-full h-screen px-4 pt-16 pb-28 text-2xl overflow-auto mb-96'
       }
     >
       <li className='py-8'>

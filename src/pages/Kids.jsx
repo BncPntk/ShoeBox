@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet';
 import PageNav from '../components/PageNav';
 import { getPageTitle } from '../App';
+import Footer from '../components/Footer';
 
 function Kids() {
   const pageTitle = 'Kids';
@@ -11,7 +12,6 @@ function Kids() {
         <title>{getPageTitle(pageTitle)}</title>
       </Helmet>
       <PageNav />
-      Kids
     </div>
   );
 }
