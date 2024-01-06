@@ -5,6 +5,7 @@ import Carousel from '../components/Carousel';
 import Footer from '../components/Footer';
 import FAQ from '../components/FAQ';
 import CardGroup from '../components/CardGroup';
+import Banner from '../components/Banner';
 
 function Home({ data }) {
   const popularCurrently = data
@@ -25,8 +26,9 @@ function Home({ data }) {
       <PageNav />
       <Carousel />
       <CardGroup title={'Popular Right Now'} type={popularCurrently} />
-      <FAQ />
+      <Banner />
       <CardGroup title={'New Releases'} type={news} />
+      <FAQ />
       <Footer />
     </div>
   );
