@@ -16,7 +16,15 @@ mongoose
     console.log(err);
   });
 
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      'http://127.0.0.1:5173',
+      'https://bncpntk-shoebox.netlify.app',
+      'http://localhost:5173',
+    ],
+  }),
+);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
