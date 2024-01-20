@@ -1,5 +1,21 @@
 import Shoe from './../models/shoeModel.js';
-import express, { Request, Response } from 'express';
+import express, { NextFunction, Request, Response } from 'express';
+
+export const popularNow = (req: Request, res: Response, next: NextFunction) => {
+  req.query.limit = '4';
+  req.query.sort = '-amountSold';
+  next();
+};
+
+export const newReleases = (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
+  req.query.limit = '4';
+  req.query.sort = '-releaseDate';
+  next();
+};
 
 // TODO: API DOCS
 export const getAllShoes = async (req: Request, res: Response) => {
