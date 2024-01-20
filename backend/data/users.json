@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "username": "john_doe",
+    "email": "john.doe@example.com",
+    "password": "hashed_password",
+    "firstName": "John",
+    "lastName": "Doe",
+    "address": {
+      "street": "123 Main St",
+      "city": "Cityville",
+      "state": "State",
+      "zipCode": "12345",
+      "country": "Country"
+    },
+    "phoneNumber": "+1234567890",
+    "orders": [
+      {
+        "orderId": "order_123",
+        "date": "2022-01-01T10:30:00Z",
+        "items": [
+          { "shoeId": 101, "quantity": 2, "size": "EU 42" },
+          { "shoeId": 203, "quantity": 1, "size": "EU 38" }
+        ],
+        "totalPrice": 199.99,
+        "status": "completed"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "username": "jane_smith",
+    "email": "jane.smith@example.com",
+    "password": "hashed_password",
+    "firstName": "Jane",
+    "lastName": "Smith",
+    "address": {
+      "street": "456 Oak St",
+      "city": "Townsville",
+      "state": "State",
+      "zipCode": "54321",
+      "country": "Country"
+    },
+    "phoneNumber": "+9876543210",
+    "orders": []
+  },
+  {
+    "id": 3,
+    "username": "alice_green",
+    "email": "alice.green@example.com",
+    "password": "hashed_password",
+    "firstName": "Alice",
+    "lastName": "Green",
+    "address": {
+      "street": "789 Pine St",
+      "city": "Villagetown",
+      "state": "State",
+      "zipCode": "98765",
+      "country": "Country"
+    },
+    "phoneNumber": "+1357924680",
+    "orders": [
+      {
+        "orderId": "order_456",
+        "date": "2022-02-15T14:45:00Z",
+        "items": [{ "shoeId": 102, "quantity": 1, "size": "EU 37" }],
+        "totalPrice": 89.99,
+        "status": "shipped"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "username": "bob_jones",
+    "email": "bob.jones@example.com",
+    "password": "hashed_password",
+    "firstName": "Bob",
+    "lastName": "Jones",
+    "address": {
+      "street": "101 Cedar Ave",
+      "city": "Countryville",
+      "state": "State",
+      "zipCode": "54321",
+      "country": "Country"
+    },
+    "phoneNumber": "+2468013579",
+    "orders": []
+  },
+  {
+    "id": 5,
+    "username": "emma_white",
+    "email": "emma.white@example.com",
+    "password": "hashed_password",
+    "firstName": "Emma",
+    "lastName": "White",
+    "address": {
+      "street": "222 Willow Ln",
+      "city": "Suburbia",
+      "state": "State",
+      "zipCode": "98765",
+      "country": "Country"
+    },
+    "phoneNumber": "+1122334455",
+    "orders": []
+  },
+  {
+    "id": 6,
+    "username": "david_brown",
+    "email": "david.brown@example.com",
+    "password": "hashed_password",
+    "firstName": "David",
+    "lastName": "Brown",
+    "address": {
+      "street": "333 Maple Rd",
+      "city": "Downtown",
+      "state": "State",
+      "zipCode": "12345",
+      "country": "Country"
+    },
+    "phoneNumber": "+9988776655",
+    "orders": [
+      {
+        "orderId": "order_789",
+        "date": "2022-03-20T12:00:00Z",
+        "items": [{ "shoeId": 104, "quantity": 3, "size": "EU 40" }],
+        "totalPrice": 299.99,
+        "status": "pending"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "username": "olivia_black",
+    "email": "olivia.black@example.com",
+    "password": "hashed_password",
+    "firstName": "Olivia",
+    "lastName": "Black",
+    "address": {
+      "street": "444 Birch Blvd",
+      "city": "Uptown",
+      "state": "State",
+      "zipCode": "54321",
+      "country": "Country"
+    },
+    "phoneNumber": "+3344556677",
+    "orders": []
+  },
+  {
+    "id": 8,
+    "username": "michael_gray",
+    "email": "michael.gray@example.com",
+    "password": "hashed_password",
+    "firstName": "Michael",
+    "lastName": "Gray",
+    "address": {
+      "street": "555 Elm St",
+      "city": "Outskirts",
+      "state": "State",
+      "zipCode": "98765",
+      "country": "Country"
+    },
+    "phoneNumber": "+7788990011",
+    "orders": []
+  },
+  {
+    "id": 9,
+    "username": "ava_red",
+    "email": "ava.red@example.com",
+    "password": "hashed_password",
+    "firstName": "Ava",
+    "lastName": "Red",
+    "address": {
+      "street": "666 Oak Blvd",
+      "city": "Ruralville",
+      "state": "State",
+      "zipCode": "12345",
+      "country": "Country"
+    },
+    "phoneNumber": "+9900112233",
+    "orders": []
+  }
+]

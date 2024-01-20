@@ -113,6 +113,9 @@ function generateRandomShoeName() {
   );
   return randomWords.join(' ');
 }
+const imageCover = '/';
+const imageGallery = '/';
+const tags = ['new'];
 
 // DATA ARR
 function generateShoeData() {
@@ -126,20 +129,23 @@ function generateShoeData() {
     () => predefinedSizesEU[Math.floor(Math.random() * predefinedSizesEU.length)]
   );
   const gender = predefinedGenders[Math.floor(Math.random() * predefinedGenders.length)];
-
   const amountSold = generateRandomAmountSold(0, 500);
-
   const releaseDate = generateRandomReleaseDate();
+  const quantity = Math.floor(Math.random() * 201);
 
   return {
-    releaseDate,
     brand,
     name,
     price,
-    color,
     sizesEU,
-    gender,
+    quantity,
+    color,
     amountSold,
+    gender,
+    imageCover,
+    imageGallery,
+    tags,
+    releaseDate,
   };
 }
 
@@ -170,7 +176,7 @@ function generateShoeEntries(numEntries) {
   return shoeEntries;
 }
 
-const numberOfEntries = 10; // amount of shoes
+const numberOfEntries = 25; // amount of shoes
 const data = generateShoeEntries(numberOfEntries);
 
 export default data;
