@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import cors from 'cors';
 dotenv.config({ path: './config.env' });
 import app from './app.js';
 
@@ -14,6 +15,8 @@ mongoose
   .catch((err) => {
     console.log(err);
   });
+
+app.use(cors());
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
