@@ -14,8 +14,6 @@ import PageNotFound from './pages/PageNotFound';
 
 import data from './data/data.js';
 
-console.log(data);
-
 function App() {
   return (
     <BrowserRouter>
