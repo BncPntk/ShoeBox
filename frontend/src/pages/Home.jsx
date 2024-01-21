@@ -6,17 +6,29 @@ import Footer from '../components/Footer';
 import FAQ from '../components/FAQ';
 import CardGroup from '../components/CardGroup';
 import Banner from '../components/Banner';
+import Loader from '../components/Loader';
+import ErrorRow from '../components/ErrorRow';
 
-function Home({ data }) {
-  const popularCurrently = data
-    .slice()
-    .sort((a, b) => b.amountSold - a.amountSold)
-    .slice(0, 4);
+import fetchData from '../apiUtils';
+import CONFIG from '../config';
 
-  const news = data
-    .slice()
-    .sort((a, b) => b.releaseDate.localeCompare(a.releaseDate))
-    .slice(0, 4);
+import { useEffect, useState } from 'react';
+
+function Home() {
+  const [popularCurr, setPopularCurr] = useState([]);
+  const [newReleases, setNewReleases] = useState([]);
+  const [isLoadingPopular, setIsLoadingPopular] = useState(false);
+  const [isLoadingNewReleases, setIsLoadingNewReleases] = useState(false);
+  const [errorPopular, setErrorPopular] = useState();
+  const [errorNewReleases, setErrorNewReleases] = useState();
+
+  useEffect(() => {
+    const popularUrl = `${CONFIG.BASE_URL}/shoes/popular-now`;
+    const newReleasesUrl = `${CONFIG.BASE_URL}/shoes/new-releases`;
+
+    fetchData(popularUrl, setPopularCurr, setIsLoadingPopular, setErrorPopular);
+    fetchData(newReleasesUrl, setNewReleases, setIsLoadingNewReleases, setErrorNewReleases);
+  }, []);
 
   return (
     <div>
@@ -25,9 +37,17 @@ function Home({ data }) {
       </Helmet>
       <PageNav />
       <Carousel />
-      <CardGroup title={'Popular Right Now'} type={popularCurrently} />
+
+      {isLoadingPopular && <Loader />}
+      {errorPopular && <ErrorRow />}
+      {!isLoadingPopular && <CardGroup title={'Popular Right Now'} type={popularCurr} />}
+
       <Banner />
-      <CardGroup title={'New Releases'} type={news} />
+
+      {isLoadingNewReleases && <Loader />}
+      {errorNewReleases && <ErrorRow />}
+      {!isLoadingNewReleases && <CardGroup title={'New Releases'} type={newReleases} />}
+
       <FAQ />
       <Footer />
     </div>
