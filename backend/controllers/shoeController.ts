@@ -17,6 +17,17 @@ export const newReleases = (
   next();
 };
 
+export const newAndFeatured = (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
+  req.query.limit = '20';
+  req.query.sort = '-releaseDate';
+  req.query.sort = '-quantity';
+  next();
+};
+
 // TODO: API DOCS
 export const getAllShoes = async (req: Request, res: Response) => {
   try {
