@@ -4,9 +4,30 @@ import ColorPicker from './ColorPicker';
 import PriceRangePicker from './PriceRangePicker';
 import Button from './Button';
 import SizePicker from './SizePicker';
+import { useFilterContext } from '../contexts/FilterContext';
 
 function MobileSidebar({ onSizePick }) {
+  const { onSetClearFilters, onSetFilter } = useFilterContext();
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleToggleMenu = () => {
+    setMenuOpen((prevMenuOpen) => !prevMenuOpen);
+    if (!menuOpen) {
+      document.body.classList.add('overflow-hidden');
+    } else {
+      document.body.classList.remove('overflow-hidden');
+    }
+  };
+
+  const handleClearAndFilterClick = () => {
+    onSetClearFilters();
+    handleToggleMenu();
+  };
+
+  const handleSetFilter = () => {
+    onSetFilter();
+    handleToggleMenu();
+  };
 
   useEffect(() => {
     function handleResize() {
@@ -20,15 +41,6 @@ function MobileSidebar({ onSizePick }) {
       window.removeEventListener('resize', handleResize);
     };
   }, [menuOpen]);
-
-  const handleToggleMenu = () => {
-    setMenuOpen((prevMenuOpen) => !prevMenuOpen);
-    if (!menuOpen) {
-      document.body.classList.add('overflow-hidden');
-    } else {
-      document.body.classList.remove('overflow-hidden');
-    }
-  };
 
   return (
     <>
@@ -60,10 +72,17 @@ function MobileSidebar({ onSizePick }) {
               <ColorPicker />
             </div>
             <div className='flex justify-between gap-6 px-4 pb-12'>
-              <Button rounded={false} className={'w-60 h-12 text-lg'}>
+              <Button
+                rounded={false}
+                bgColor={`bg-gray-50`}
+                className={
+                  'w-60 h-12 text-lg font-medium text-gray-900 border-2 border-gray-900 hover:bg-gray-300 active:bg-gray-400'
+                }
+                onClick={handleClearAndFilterClick}
+              >
                 Clear Filters
               </Button>
-              <Button rounded={false} className={'w-60 h-12 text-lg'}>
+              <Button rounded={false} className={'w-60 h-12 text-lg'} onClick={handleSetFilter}>
                 Filter
               </Button>
             </div>

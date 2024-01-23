@@ -10,24 +10,23 @@ import CardGroup from '../components/CardGroup';
 import Footer from '../components/Footer';
 import PageSidebar from '../components/PageSidebar';
 import MobileSidebar from '../components/MobileSidebar';
+import { useFilterContext } from '../contexts/FilterContext';
+import FilterNotFound from '../components/FilterNotFound';
 
 function Men() {
+  const { urlWithFilters, onSetType } = useFilterContext();
   const [menShoes, setMenShoes] = useState([]);
   const [isLoadingMen, setIsLoadingMen] = useState(false);
   const [errorMen, setErrorMen] = useState();
   const pageTitle = 'Men';
-  const [pickedSize, setPickedSize] = useState(null);
 
   useEffect(() => {
-    const menUrl = `${CONFIG.BASE_URL}/shoes?gender=men`;
+    const menUrl = urlWithFilters || `${CONFIG.BASE_URL}/shoes?gender=men`;
+    onSetType('men');
 
     fetchData(menUrl, setMenShoes, setIsLoadingMen, setErrorMen);
-  }, []);
+  }, [urlWithFilters, onSetType]);
 
-  function handleSizePicker(size) {
-    setPickedSize(size);
-    console.log(pickedSize);
-  }
   return (
     <div>
       <Helmet>
@@ -35,16 +34,16 @@ function Men() {
       </Helmet>
       <PageNav />
       <div className='max-w-[1152px] pt-[48px] pb-[8px] mx-auto h-full'>
-        <div className='grid grid-cols-1 lg:grid-cols-[20%_80%] w-full gap-0'>
+        <div className='grid grid-cols-1 lg:grid-cols-[20%_80%] w-full gap-4'>
           {/* SIDEBAR */}
-          <PageSidebar onSizePick={handleSizePicker} />
-          <MobileSidebar onSizePick={handleSizePicker} />
+          <PageSidebar />
+          <MobileSidebar />
           {/* SHOES GRID */}
           <div>
             {isLoadingMen && <Loader />}
             {errorMen && <ErrorRow />}
-            {!isLoadingMen && <CardGroup title={'Men'} type={menShoes} />}
-            {!isLoadingMen && <CardGroup title={'Men'} type={menShoes} />}
+            {!isLoadingMen && menShoes.length === 0 && <FilterNotFound title={'MEN'} />}
+            {!isLoadingMen && menShoes.length !== 0 && <CardGroup title={'MEN'} type={menShoes} />}
           </div>
         </div>
       </div>

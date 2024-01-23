@@ -11,26 +11,27 @@ import Liked from './pages/Liked';
 import Cart from './pages/Cart';
 import Login from './pages/Login';
 import PageNotFound from './pages/PageNotFound';
-
-import data from './data/data.js';
+import FilterContextProvider from './contexts/FilterContext.jsx';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<Home data={data} />} />
-        <Route path='latest' element={<Latest />} />
-        <Route path='men' element={<Men />} />
-        <Route path='women' element={<Women />} />
-        <Route path='kids' element={<Kids />} />
-        <Route path='sale' element={<OnSale />} />
-        <Route path='product' element={<Product />} />
-        <Route path='liked' element={<Liked />} />
-        <Route path='cart' element={<Cart />} />
-        <Route path='login' element={<Login />} />
-        <Route path='*' element={<PageNotFound />} />
-      </Routes>
-    </BrowserRouter>
+    <FilterContextProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='latest' element={<Latest />} />
+          <Route path='men' element={<Men />} />
+          <Route path='women' element={<Women />} />
+          <Route path='kids' element={<Kids />} />
+          <Route path='sale' element={<OnSale />} />
+          <Route path='product' element={<Product />} />
+          <Route path='liked' element={<Liked />} />
+          <Route path='cart' element={<Cart />} />
+          <Route path='login' element={<Login />} />
+          <Route path='*' element={<PageNotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </FilterContextProvider>
   );
 }
 

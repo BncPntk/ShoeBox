@@ -25,6 +25,7 @@ export const getAllShoes = async (req: Request, res: Response) => {
     excludedFields.forEach((el) => delete filteredQuery[el]);
 
     // FILTERING
+
     let queryStr = JSON.stringify(filteredQuery);
     queryStr = queryStr.replace(
       /\b(gte|gt|lte|lt)\b/g,

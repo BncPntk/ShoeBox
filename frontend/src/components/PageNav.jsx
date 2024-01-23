@@ -8,8 +8,10 @@ import '../index.css';
 
 import { useEffect, useState } from 'react';
 import MobileNav from './MobileNav';
+import { useFilterContext } from '../contexts/FilterContext';
 
 function PageNav() {
+  const { onSetClearFilters } = useFilterContext();
   const [navMobile, setnavMobile] = useState(false);
 
   function handleClick() {
@@ -34,6 +36,7 @@ function PageNav() {
           <li>
             <NavLink
               to='/latest'
+              onClick={onSetClearFilters}
               className='hover:text-customBrown hover:underline underline-offset-8 active:text-customDarkBrown '
             >
               New & Featured
@@ -42,6 +45,7 @@ function PageNav() {
           <li>
             <NavLink
               to='/men'
+              onClick={onSetClearFilters}
               className='hover:text-customBrown hover:underline underline-offset-8 active:text-customDarkBrown '
             >
               Men
@@ -50,36 +54,40 @@ function PageNav() {
           <li>
             <NavLink
               to='/women'
+              onClick={onSetClearFilters}
               className='hover:text-customBrown hover:underline underline-offset-8 active:text-customDarkBrown '
             >
               Women
             </NavLink>
           </li>
-          <li>
+          <li onClick={onSetClearFilters}>
             <NavLink
               to='/kids'
+              onClick={onSetClearFilters}
               className='hover:text-customBrown hover:underline underline-offset-8 active:text-customDarkBrown '
             >
               Kids
             </NavLink>
           </li>
           <li>
-            <NavLink to='/sale'>
+            <NavLink to='/sale' onClick={onSetClearFilters}>
               <Button>On Sale</Button>
             </NavLink>
           </li>
           <li>
-            <NavLink to='/liked'>
+            <NavLink to='/liked' onClick={onSetClearFilters}>
               <LikeButton />
             </NavLink>
           </li>
           <li>
-            <NavLink to='/cart'>
+            <NavLink to='/cart' onClick={onSetClearFilters}>
               <CartButton />
             </NavLink>
           </li>
-          <li>
-            <NavLink to='/login'>Login</NavLink>
+          <li onClick={onSetClearFilters}>
+            <NavLink to='/login' onClick={onSetClearFilters}>
+              Login
+            </NavLink>
           </li>
         </ul>
         <div className='cursor-pointer md:hidden' onClick={handleClick}>

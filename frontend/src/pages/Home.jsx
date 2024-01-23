@@ -39,13 +39,15 @@ function Home() {
       <Carousel />
 
       {isLoadingPopular && <Loader />}
-      {errorPopular && <ErrorRow />}
+      {errorPopular && <ErrorRow text={`Oops! Something went wrong while fetching data from the server.`} />}
       {!isLoadingPopular && <CardGroup title={'Popular Right Now'} type={popularCurr} />}
 
       <Banner />
 
       {isLoadingNewReleases && <Loader />}
-      {errorNewReleases && <ErrorRow />}
+      {errorNewReleases && (
+        <ErrorRow text={`Oops! Something went wrong while fetching data from the server.`} />
+      )}
       {!isLoadingNewReleases && <CardGroup title={'New Releases'} type={newReleases} />}
 
       <FAQ />

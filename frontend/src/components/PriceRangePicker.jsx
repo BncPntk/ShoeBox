@@ -1,4 +1,8 @@
+import { useFilterContext } from '../contexts/FilterContext';
+
 function PriceRangePicker() {
+  const { pickedMinimum, onSetPickedMinimum, pickedMaximum, onSetPickedMaximum } = useFilterContext();
+
   return (
     <div className='px-4 mb-12 divide-y-2 divide-gray-300 lg:px-0 divide-solid'>
       <h4 className='mb-1.5 text-2xl font-medium '>Price</h4>
@@ -11,6 +15,9 @@ function PriceRangePicker() {
             id='priceMin'
             type='number'
             min='0'
+            step={5}
+            value={pickedMinimum}
+            onChange={(e) => onSetPickedMinimum(e.target.value)}
             inputMode='numeric'
             className='w-80 sm:w-60 lg:w-24 px-1 py-1 text-end border-[1.4px] border-solid rounded border-customBrown hover:cursor-pointer order-2 mb-4 lg:mb-4'
             placeholder='0 €'
@@ -24,6 +31,9 @@ function PriceRangePicker() {
             id='priceMax'
             type='number'
             min='0'
+            step={5}
+            value={pickedMaximum}
+            onChange={(e) => onSetPickedMaximum(e.target.value)}
             className='w-80 sm:w-60 lg:w-24  px-2 py-1 border-[1.4px] border-solid rounded border-customBrown text-end hover:cursor-pointer order-4'
             placeholder='2,000 €'
           />

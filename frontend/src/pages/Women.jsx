@@ -8,18 +8,24 @@ import CardGroup from '../components/CardGroup';
 import fetchData from '../apiUtils';
 import CONFIG from '../config';
 import Footer from '../components/Footer';
+import PageSidebar from '../components/PageSidebar';
+import MobileSidebar from '../components/MobileSidebar';
+import { useFilterContext } from '../contexts/FilterContext';
+import FilterNotFound from '../components/FilterNotFound';
 
 function Women() {
+  const { urlWithFilters, onSetType } = useFilterContext();
   const [womenShoes, setWomenShoes] = useState([]);
   const [isLoadingWomen, setIsLoadingWomen] = useState(false);
   const [errorWomen, setErrorWomen] = useState();
   const pageTitle = 'Women';
 
   useEffect(() => {
-    const womenUrl = `${CONFIG.BASE_URL}/shoes?gender=women`;
+    const womenUrl = urlWithFilters || `${CONFIG.BASE_URL}/shoes?gender=women`;
+    onSetType('women');
 
     fetchData(womenUrl, setWomenShoes, setIsLoadingWomen, setErrorWomen);
-  }, []);
+  }, [urlWithFilters, onSetType]);
 
   return (
     <div>
@@ -27,9 +33,20 @@ function Women() {
         <title>{getPageTitle(pageTitle)}</title>
       </Helmet>
       <PageNav />
-      {isLoadingWomen && <Loader />}
-      {errorWomen && <ErrorRow />}
-      {!isLoadingWomen && <CardGroup title={'Women'} type={womenShoes} />}
+      <div className='max-w-[1152px] pt-[48px] pb-[8px] mx-auto h-full'>
+        <div className='grid grid-cols-1 lg:grid-cols-[20%_80%] w-full gap-4'>
+          {/* SIDEBAR */}
+          <PageSidebar />
+          <MobileSidebar />
+          {/* SHOES GRID */}
+          <div>
+            {isLoadingWomen && <Loader />}
+            {errorWomen && <ErrorRow />}
+            {!isLoadingWomen && womenShoes.length === 0 && <FilterNotFound title={'WOMEN'} />}
+            {!isLoadingWomen && womenShoes.length !== 0 && <CardGroup title={'WOMEN'} type={womenShoes} />}
+          </div>
+        </div>
+      </div>
       <Footer />
     </div>
   );

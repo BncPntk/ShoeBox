@@ -4,32 +4,23 @@ const predefinedColors = ['black', 'blue', 'green', 'white', 'yellow', 'orange',
 const predefinedGenders = ['men', 'women', 'kids'];
 
 // SIZES
-const predefinedSizesEU = [
-  'EU 22',
-  'EU 23',
-  'EU 24',
-  'EU 25',
-  'EU 26',
-  'EU 27',
-  'EU 28',
-  'EU 29',
-  'EU 30',
-  'EU 31',
-  'EU 32',
-  'EU 33',
-  'EU 34',
-  'EU 35',
-  'EU 36',
-  'EU 37',
-  'EU 38',
-  'EU 39',
-  'EU 40',
-  'EU 41',
-  'EU 42',
-  'EU 43',
-  'EU 44',
-  'EU 45',
-];
+const predefinedSizesEU = [];
+
+for (let i = 27; i <= 49; i += 0.5) {
+  const size = `EU-${i.toFixed(1)}`;
+  predefinedSizesEU.push(size);
+}
+
+function shuffle(array) {
+  const shuffledArray = [...array];
+  for (let i = shuffledArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+  }
+  return shuffledArray;
+}
+
+const shuffledSizesEU = shuffle(predefinedSizesEU);
 
 const brands = [
   'Vans',
@@ -124,10 +115,8 @@ function generateShoeData() {
   const price = generateRandomPrice(15, 2000);
   const color = predefinedColors[Math.floor(Math.random() * predefinedColors.length)];
   const numSizes = Math.floor(Math.random() * 15) + 2;
-  const sizesEU = Array.from(
-    { length: numSizes },
-    () => predefinedSizesEU[Math.floor(Math.random() * predefinedSizesEU.length)]
-  );
+  const sizesEU = shuffledSizesEU.slice(0, numSizes);
+
   const gender = predefinedGenders[Math.floor(Math.random() * predefinedGenders.length)];
   const amountSold = generateRandomAmountSold(0, 500);
   const releaseDate = generateRandomReleaseDate();
@@ -176,7 +165,7 @@ function generateShoeEntries(numEntries) {
   return shoeEntries;
 }
 
-const numberOfEntries = 25; // amount of shoes
+const numberOfEntries = 100; // amount of shoes
 const data = generateShoeEntries(numberOfEntries);
 
 export default data;
