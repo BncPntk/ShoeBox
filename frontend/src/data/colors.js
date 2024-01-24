@@ -31,4 +31,8 @@ export const colors = [
     name: 'Purple',
     hexCode: '#674682',
   },
+  {
+    name: 'Brown',
+    hexCode: '#573b26',
+  },
 ];
