@@ -42,8 +42,8 @@ function Kids() {
           <div>
             {isLoadingKids && <Loader />}
             {errorKids && <ErrorRow />}
-            {!isLoadingKids && kidsShoes.length === 0 && <FilterNotFound title={'KIDS'} />}
-            {!isLoadingKids && kidsShoes.length !== 0 && <CardGroup title={'KIDS'} type={kidsShoes} />}
+            {!isLoadingKids && kidsShoes.length === 0 && <FilterNotFound title={'Kids'} />}
+            {!isLoadingKids && kidsShoes.length !== 0 && <CardGroup title={'Kids'} type={kidsShoes} />}
           </div>
         </div>
       </div>

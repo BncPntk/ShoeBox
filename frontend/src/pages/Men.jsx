@@ -17,7 +17,7 @@ function Men() {
   const { urlWithFilters, onSetType } = useFilterContext();
   const [menShoes, setMenShoes] = useState([]);
   const [isLoadingMen, setIsLoadingMen] = useState(false);
-  const [errorMen, setErrorMen] = useState();
+  const [errorMen, setErrorMen] = useState(false);
   const pageTitle = 'Men';
 
   useEffect(() => {
@@ -41,9 +41,9 @@ function Men() {
           {/* SHOES GRID */}
           <div>
             {isLoadingMen && <Loader />}
-            {errorMen && <ErrorRow />}
-            {!isLoadingMen && menShoes.length === 0 && <FilterNotFound title={'MEN'} />}
-            {!isLoadingMen && menShoes.length !== 0 && <CardGroup title={'MEN'} type={menShoes} />}
+            {errorMen && <ErrorRow text={'Error'} />}
+            {!isLoadingMen && menShoes.length === 0 && <FilterNotFound title={'Men'} />}
+            {!isLoadingMen && menShoes.length !== 0 && <CardGroup title={'Men'} type={menShoes} />}
           </div>
         </div>
       </div>

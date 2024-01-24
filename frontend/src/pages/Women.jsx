@@ -42,8 +42,8 @@ function Women() {
           <div>
             {isLoadingWomen && <Loader />}
             {errorWomen && <ErrorRow />}
-            {!isLoadingWomen && womenShoes.length === 0 && <FilterNotFound title={'WOMEN'} />}
-            {!isLoadingWomen && womenShoes.length !== 0 && <CardGroup title={'WOMEN'} type={womenShoes} />}
+            {!isLoadingWomen && womenShoes.length === 0 && <FilterNotFound title={'Women'} />}
+            {!isLoadingWomen && womenShoes.length !== 0 && <CardGroup title={'Women'} type={womenShoes} />}
           </div>
         </div>
       </div>
