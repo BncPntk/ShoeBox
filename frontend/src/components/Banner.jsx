@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import Button from './Button';
 
 function Banner() {
@@ -7,9 +8,9 @@ function Banner() {
         <div className='absolute grid items-center grid-cols-2 px-4 md:items-end'>
           <div>
             <h2 className='pb-6 text-4xl font-bold text-white'>This Week&apos;s Best GIFTS</h2>
-            <Button className='' rounded={false}>
-              Shop Now
-            </Button>
+            <NavLink to='/notfound'>
+              <Button rounded={false}>Shop Now</Button>
+            </NavLink>
           </div>
           <div className='grid gap-4 md:grid-cols-2 justify-self-end'>
             <img className='w-24 h-auto md:w-36' src='/shoes/placeholder.png ' alt='' />

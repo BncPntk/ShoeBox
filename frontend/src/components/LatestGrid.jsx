@@ -6,7 +6,7 @@ function LatestGrid({ data }) {
           key={i}
           className={`${i === 1 || i === 5 || i === 13 ? 'md:col-span-2' : ''}${
             i === 6 ? 'md:row-span-2' : ''
-          } flex flex-col items-center justify-center border-2 rounded-md bg-cover bg-center relative transition duration-300 hover:scale-[1.03]`}
+          } flex flex-col items-center justify-center border-2 rounded-md bg-cover bg-center relative transition duration-300 hover:scale-[1.03] hover:cursor-pointer`}
         >
           <img
             src={`/shoes/news/${i + 1}.jpg`}

@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { CircleFill } from 'react-bootstrap-icons';
 import sliderData from '../data/sliderData';
 import Button from '../components/Button';
+import { NavLink } from 'react-router-dom';
 
 function Carousel() {
   const [currIndex, setCurrIndex] = useState(0);
@@ -79,9 +80,11 @@ function Carousel() {
               <p className='mb-6 text-white max-w-64 md:max-w-[302px] text-center md:text-left'>
                 {slide.text}
               </p>
-              <Button rounded={false} className='z-10'>
-                Discover
-              </Button>
+              <NavLink to='/notfound'>
+                <Button rounded={false} className='z-10'>
+                  Discover
+                </Button>
+              </NavLink>
             </div>
           ))}
         </div>

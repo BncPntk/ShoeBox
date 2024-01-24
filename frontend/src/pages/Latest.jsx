@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 import { useEffect, useState } from 'react';
 import fetchData from '../apiUtils';
 import CONFIG from '../config';
-import LatestGrid from './LatestGrid';
+import LatestGrid from '../components/LatestGrid';
 import Loader from '../components/Loader';
 import ErrorRow from '../components/ErrorRow';
 
