@@ -3,6 +3,12 @@ import userRouter from '../routes/userRoutes.js';
 
 import cors from 'cors';
 import express from 'express';
+import { fileURLToPath } from 'url';
+import path from 'path';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const app = express();
 
@@ -19,6 +25,9 @@ app.use(
     credentials: true,
   }),
 );
+
+app.use('/public', express.static(path.join(__dirname, '../public')));
+console.log('Resolved path:', path.join(__dirname, '../public/'));
 
 app.use('/api/v1/shoes', shoeRouter);
 app.use('/api/v1/users', userRouter);
