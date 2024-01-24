@@ -28,6 +28,14 @@ export const newAndFeatured = (
   next();
 };
 
+export const getImage = (req: Request, res: Response) => {
+  try {
+    res.status(200).download('./public/shoe_collection/' + req.params.path);
+  } catch (err) {
+    res.status(404).json({ status: 'fail', message: err });
+  }
+};
+
 // TODO: API DOCS
 export const getAllShoes = async (req: Request, res: Response) => {
   try {
