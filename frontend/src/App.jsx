@@ -12,6 +12,7 @@ import Cart from './pages/Cart';
 import Login from './pages/Login';
 import PageNotFound from './pages/PageNotFound';
 import FilterContextProvider from './contexts/FilterContext.jsx';
+import ShoesLayout from './pages/ShoesLayout.jsx';
 
 function App() {
   return (
@@ -20,10 +21,13 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='latest' element={<Latest />} />
-          <Route path='men' element={<Men />} />
-          <Route path='women' element={<Women />} />
-          <Route path='kids' element={<Kids />} />
-          <Route path='sale' element={<OnSale />} />
+          <Route path='shoes' element={<ShoesLayout />}>
+            <Route index element={<Home />} />
+            <Route path='men' element={<Men />} />
+            <Route path='women' element={<Women />} />
+            <Route path='kids' element={<Kids />} />
+            <Route path='sale' element={<OnSale />} />
+          </Route>
           <Route path='product' element={<Product />} />
           <Route path='liked' element={<Liked />} />
           <Route path='cart' element={<Cart />} />

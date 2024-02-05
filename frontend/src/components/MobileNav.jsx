@@ -18,22 +18,22 @@ function MobileNav({ navMobile }) {
         <NavLink to='/latest'>New & Featured</NavLink>
       </li>
       <li className='py-8'>
-        <NavLink to='/men' onClick={onSetClearFilters}>
+        <NavLink to='/shoes/men' onClick={onSetClearFilters}>
           Men
         </NavLink>
       </li>
       <li className='py-8'>
-        <NavLink to='/women' onClick={onSetClearFilters}>
+        <NavLink to='/shoes/women' onClick={onSetClearFilters}>
           Women
         </NavLink>
       </li>
       <li className='py-8'>
-        <NavLink to='/kids' onClick={onSetClearFilters}>
+        <NavLink to='/shoes/kids' onClick={onSetClearFilters}>
           Kids
         </NavLink>
       </li>
       <li className='py-8'>
-        <NavLink to='/sale' onClick={onSetClearFilters}>
+        <NavLink to='/shoes/sale' onClick={onSetClearFilters}>
           <Button>On Sale</Button>
         </NavLink>
       </li>
