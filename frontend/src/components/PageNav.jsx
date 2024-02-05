@@ -44,7 +44,7 @@ function PageNav() {
           </li>
           <li>
             <NavLink
-              to='/men'
+              to='/shoes/men'
               onClick={onSetClearFilters}
               className='hover:text-customBrown hover:underline underline-offset-8 active:text-customDarkBrown '
             >
@@ -53,7 +53,7 @@ function PageNav() {
           </li>
           <li>
             <NavLink
-              to='/women'
+              to='/shoes/women'
               onClick={onSetClearFilters}
               className='hover:text-customBrown hover:underline underline-offset-8 active:text-customDarkBrown '
             >
@@ -62,7 +62,7 @@ function PageNav() {
           </li>
           <li onClick={onSetClearFilters}>
             <NavLink
-              to='/kids'
+              to='/shoes/kids'
               onClick={onSetClearFilters}
               className='hover:text-customBrown hover:underline underline-offset-8 active:text-customDarkBrown '
             >
@@ -70,7 +70,7 @@ function PageNav() {
             </NavLink>
           </li>
           <li>
-            <NavLink to='/sale' onClick={onSetClearFilters}>
+            <NavLink to='/shoes/sale' onClick={onSetClearFilters}>
               <Button>On Sale</Button>
             </NavLink>
           </li>
