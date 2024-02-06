@@ -19,6 +19,9 @@ function Loader() {
           </div>
           <p className='text-lg font-medium text-center opacity-65'>Loading...</p>
         </div>
+        <p className='text-center opacity-40 text-md'>
+          First visit might take around a minute after periods of inactivity.
+        </p>
       </div>
     </section>
   );

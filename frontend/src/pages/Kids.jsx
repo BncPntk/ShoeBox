@@ -41,7 +41,7 @@ function Kids() {
           {/* SHOES GRID */}
           <div>
             {isLoadingKids && <Loader />}
-            {errorKids && <ErrorRow />}
+            {errorKids && <ErrorRow text={'Error'} />}
             {!isLoadingKids && kidsShoes.length === 0 && <FilterNotFound title={'Kids'} />}
             {!isLoadingKids && kidsShoes.length !== 0 && <CardGroup title={'Kids'} type={kidsShoes} />}
           </div>
