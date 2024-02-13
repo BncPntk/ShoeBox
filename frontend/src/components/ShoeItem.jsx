@@ -39,8 +39,8 @@ function ShoeItem({ shoeData }) {
       {loading ? (
         <Loader />
       ) : (
-        <div className='grid h-auto grid-cols-3 gap-8'>
-          <div className='flex col-start-1 col-end-3'>
+        <div className='grid h-auto grid-cols-1 md:grid-cols-3 gap-8 px-4 md:px-0'>
+          <div className='flex col-start-1 md:col-end-3 col-end-4'>
             <div className='grid grid-cols-2 gap-1'>
               <div className='max-w-[400px] max-h-[400px] border-2 border-customDarkPurple'>
                 <img src={`${backendBaseUrl}${imageCover}`} alt={`${brand} ${name}`} />
@@ -64,20 +64,20 @@ function ShoeItem({ shoeData }) {
               </div>
             </div>
           </div>
-          <div className='flex flex-col col-start-3 px-2 pt-8 pb-2'>
-            <h1 className='text-3xl break-words'>
+          <div className='flex flex-col col-start-1 md:col-start-3 md:px-2 pt-2 md:pt-8 pb-2 col-end-4'>
+            <h1 className='text-2xl md:text-3xl break-words'>
               {brand} {name}
             </h1>
-            <div className='flex items-center gap-1 py-2'>
-              <div style={{ backgroundColor: colorHex }} className='w-6 h-6 rounded-full'></div>
-              <p className='py-2 text-xl'>{color}</p>
+            <div className=' items-center gap-1 py-2 flex'>
+              <div style={{ backgroundColor: colorHex }} className='w-4 h-4 md:w-6 md:h-6 rounded-full'></div>
+              <p className='md:py-2 text-md md:text-xl'>{color}</p>
             </div>
-            <p className='py-4 text-4xl font-semibold'>
+            <p className='pt-1 pb-4 md:py-4 text-3xl md:text-4xl font-semibold'>
               {price} € <span className='text-sm font-semibold text-gray-500'>tax incl.</span>
             </p>
             <ul className='flex flex-wrap justify-center gap-2 pt-2 pb-8 mx-auto'>
               {sizesEU?.map((size, i) => (
-                <li key={i} className='w-20 text-center border border-customPurple hover:cursor-pointer'>
+                <li key={i} className='w-20 border border-customPurple hover:cursor-pointer justify-center'>
                   {size.slice(3)}
                 </li>
               ))}
@@ -88,7 +88,7 @@ function ShoeItem({ shoeData }) {
               </Button>
             </div>
           </div>
-          <div className='col-span-3 px-2 mt-12 md:px-40 text-start text-zinc-700'>
+          <div className='col-span-3 px-2 mt-4 md:mt-12 md:px-40 text-start text-zinc-700'>
             <h1 className='pt-8 pb-2 text-2xl font-semibold text-center underline md:text-start underline-offset-4 '>
               {brand} {name}
             </h1>
