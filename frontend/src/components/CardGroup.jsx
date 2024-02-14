@@ -13,6 +13,7 @@ function CardGroup({ title, type }) {
               brand={shoe.brand}
               name={shoe.name}
               price={shoe.price}
+              gender={shoe.gender}
               img={shoe.imageCover}
             />
           ))}
